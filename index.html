@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+
+<style>
+
+
+  #myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+#myBar {
+  width: 10%;
+  height: 30px;
+  background-color: #4CAF50;
+  text-align: center; /* To center it horizontally (if you want) */
+  line-height: 30px; /* To center it vertically */
+  color: white;
+}
+
+
+  form{
+    font-family: Arial, Helvetica, sans-serif
+  }
+input{
+  border-radius: 112px;
+background: #55b9f3;
+box-shadow: inset 5px 5px 0px #51b0e7, 
+            inset -5px -5px 0px #59c2ff;
+            margin-bottom: .5rem;
+}
+.overlay{
+
+  height: 100%;
+  width: 100%;
+  opacity: .7;
+  position: absolute;
+  background:linear-gradient( cornflowerblue,#000000);
+}
+fieldset{
+  margin-top: 300px;
+  margin-right: 600px;
+  margin-left: 600px;
+  color: #FFFFFF;
+  border-color: #FF9900;
+}
+  body{
+  background-image:url(bg-img.png);
+  font-family: Century Gothic;
+  text-align: center;
+  font-size: 1vw;
+  background-size: cover;
+}
+</style>
+<head>
+  <title>Student Grade Evaluator</title>
+</head>
+<body>  
+
+  <div class="overlay">
+
+  <fieldset>
+    <h2>Student Grade Evaluator</h2>
+<script>
+  var nameMo = prompt("What is your name?");
+</script>
+<div id="myProgress">
+  <div id="myBar"></div>
+</div>
+<br>
+<button onclick="move()" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+  Enter
+</button>
+</div>
+</fieldset>
+     </center>
+<!-- The Modal -->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header gg">
+        <h3 class="modal-title">Student Grade Evaluator</h3>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+          <form id="formMo">
+           
+            
+            <h3 style="text-align: left;">Student Name:</h3><h3 id="studName" sty></h3>
+            <h3 style="text-align: left;">List of Subjects:</h3>
+            <script>
+              document.getElementById("studName").innerHTML =  nameMo;
+             
+           </script>
+            <table>
+                <tr>
+    <th>Subject Title</th>
+    <th>Grade</th> 
+    <th>Remarks</th>
+  </tr>
+  <tr>
+    <td><h4>Math</h4></td>
+    <td><input type="text" name="" id="mathGrade" required></td>
+    <td><p id="mathEval"></p></td>
+  </tr>
+  <tr>
+    <td><h4>Science</h4></td>
+    <td><input type="text" name="" id="sciGrade" required></td>
+    <td><p id="sciEval"></p></td>
+  </tr>
+  <tr>
+    <td><h4>English</h4></td>
+    <td><input type="text" name="" id="engGrade" required></td>
+    <td><p id="engEval"></p></td>
+  </tr>
+    <tr>
+    <td><h4>Filipino</h4></td>
+    <td><input type="text" name="" id="filGrade" required></td>
+    <td><p id="filEval"></p></td>
+  </tr>
+    <tr>
+    <td><h4>PE</h4></td>
+    <td><input type="text" name="" id="peGrade" required></td>
+    <td><p  id="peEval"></p></td>
+  </tr>
+</table>
+           
+          <h3 style="text-align: left;" >Student Rank:</h3> 
+             <h3 id="studentRem"> </h3>
+            <button type="button" class="btn btn-primary" onclick="eval()">EVALUATE</button>
+            <button type="button" class="btn btn-primary" onclick="res()">RESET</button>
+         
+          
+          </form>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+ </div>
+    
+
+
+
+
+
+ 
+
+
+
+
+
+
+  
+   
+
+
+
+
+
+
+ <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+ 
+
+
+
+ <script>
+   function res(){
+    document.getElementById("formMo").reset();
+
+  
+   document.getElementById("mathEval").innerHTML = "";
+  
+    document.getElementById("sciEval").innerHTML = "";
+
+   document.getElementById("engEval").innerHTML = "";
+   document.getElementById("filEval").innerHTML = "";
+  document.getElementById("peEval").innerHTML = "";
+    document.getElementById("studentRem").innerHTML = "";
+  }
+ </script>
+<script>
+  
+  function eval(button){
+  
+   let excellent = 0;
+   let poornfail = 0;
+   let mathGrade = document.getElementById("mathGrade").value;
+   let mathEval = document.getElementById("mathEval");
+   let sciGrade = document.getElementById("sciGrade").value;
+   let sciEval = document.getElementById("sciEval");
+   let engGrade = document.getElementById("engGrade").value;
+   let engEval = document.getElementById("engEval");
+   let filGrade = document.getElementById("filGrade").value;
+   let filEval = document.getElementById("filEval");
+   let peGrade = document.getElementById("peGrade").value;
+   let peEval = document.getElementById("peEval");
+   let rank = document.getElementById("studentRem");
+   
+ 
+   if(mathGrade  >= 90 && mathGrade <=100){
+ 
+     mathEval.textContent = "Excellent";
+     excellent += 1;
+   }
+   else if (mathGrade >=80 && mathGrade <=89)
+   {
+     mathEval.textContent = "Good";
+   }
+   else if (mathGrade >=70 && mathGrade <=79)
+   {
+     mathEval.textContent = "Average";
+   }
+   else if (mathGrade >=60 && mathGrade <=69)
+   {
+     mathEval.textContent = "Poor";
+     poornfail +=1;
+   }
+   else if (mathGrade >=00 && mathGrade <=59)
+   {
+     mathEval.textContent = "Fail";
+     poornfail +=1;
+   }
+   if(sciGrade  >= 90 && sciGrade <=100){
+ 
+ sciEval.textContent = "Excellent";
+ excellent += 1;
+ }
+ else if (sciGrade >=80 && sciGrade <=89)
+ {
+ sciEval.textContent = "Good";
+ }
+ else if (sciGrade >=70 && sciGrade <=79)
+ {
+ sciEval.textContent = "Average";
+ }
+ else if (sciGrade >=60 && sciGrade <=69)
+ {
+ sciEval.textContent = "Poor";
+ poornfail +=1;
+ }
+ else if (sciGrade >=00 && sciGrade <=59)
+ {
+ sciEval.textContent = "Fail";
+ poornfail +=1;
+ 
+ }
+ if(engGrade  >= 90 && engGrade <=100){
+ 
+ engEval.textContent = "Excellent";
+ excellent += 1;
+ }
+ else if (engGrade >=80 && engGrade <=89)
+ {
+ engEval.textContent = "Good";
+ }
+ else if (engGrade >=70 && engGrade <=79)
+ {
+ engEval.textContent = "Average";
+ }
+ else if (engGrade >=60 && engGrade <=69)
+ {
+ engEval.textContent = "Poor";
+ poornfail +=1;
+ }
+ else if (engGrade >=00 && engGrade <=59)
+ {
+ engEval.textContent = "Fail";
+ poornfail +=1;
+ 
+ }
+ if(filGrade  >= 90 && filGrade <=100){
+ 
+ filEval.textContent = "Excellent";
+ excellent += 1;
+ }
+ else if (filGrade >=80 && filGrade <=89)
+ {
+ filEval.textContent = "Good";
+ }
+ else if (filGrade >=70 && filGrade <=79)
+ {
+ filEval.textContent = "Average";
+ }
+ else if (filGrade >=60 && filGrade <=69)
+ {
+ filEval.textContent = "Poor";
+ poornfail +=1;
+ }
+ else if (filGrade >=00 && filGrade <=59)
+ {
+ filEval.textContent = "Fail";
+ poornfail +=1;
+ 
+ }
+ 
+ 
+ if(peGrade  >= 90 && peGrade <=100){
+ 
+ peEval.textContent = "Excellent";
+ excellent += 1;
+ }
+ else if (peGrade >=80 && peGrade <=89)
+ {
+ peEval.textContent = "Good";
+ }
+ else if (peGrade >=70 && peGrade <=79)
+ {
+ peEval.textContent = "Average";
+ }
+ else if (peGrade >=60 && peGrade <=69)
+ {
+ peEval.textContent = "Poor";
+
+ poornfail +=1;
+ }
+ else if (peGrade >=0 && peGrade <=59)
+ {
+ peEval.textContent = "Fail";
+
+ poornfail +=1;
+ 
+ }
+
+ if(excellent == 5){
+ rank.textContent = "Top Honor Student";
+ }
+ else if (excellent >=3 && excellent <=4){
+ 
+   rank.textContent = "Second Honorable Student";
+ 
+ }
+ else if (poornfail == 5){
+   rank.textContent = "Repeater";
+ }
+ 
+}
+  
+
+
+  
+ </script>
+ <script>
+  var i = 0;
+
+function move() {
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("myBar");
+    var width = 1;
+    var id = setInterval(frame, 10);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        i = 0;
+        elem.style.display = "none";
+       
+       
+      } else {
+        width++;
+        elem.style.width = width + "%";
+       
+      }
+    }
+  }
+}
+</script>
+
+
+
+</script>
+
+
+</body>
+</html>
